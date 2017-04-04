@@ -1,0 +1,7 @@
+{
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.renderWhitespace": "boundary",
+  "files.insertFinalNewline": true,
+  "files.eol": "\n"
+}
