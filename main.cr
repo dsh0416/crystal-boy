@@ -1,1 +1,1 @@
-puts "Hello World"
+require "cpu"
