@@ -25,6 +25,16 @@ class CPU
           register.a = result
         end
 
+        def sbc_a_{{name}}
+          carry = register.flag_c
+          result = register.a - register.{{name}} - carry
+          result & 0xFF == 0x0 ? register.set_z : register.reset_z
+          result < 0x0 ? register.set_c : register.reset_c
+          (register.a & 0xF) - (register.{{name}} & 0xF) - carry < 0 ? register.set_h : register.reset_h
+          register.set_n
+          register.a = result
+        end
+
         def and_{{name}}
           result = register.a & register.{{name}}
           result & 0xff == 0x0 ? register.set_z : register.reset_z

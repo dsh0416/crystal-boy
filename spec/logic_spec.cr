@@ -24,6 +24,14 @@ macro logic_8bit(names)
       cpu.register.a.should eq 0x1
     end
 
+    it "should sbc a and {{name}}" do
+      cpu.register.set_c
+      cpu.register.a = 0x3_u8
+      cpu.register.{{name}} = 0x1_u8
+      cpu.sbc_a_{{name}}
+      cpu.register.a.should eq 0x1
+    end
+
     it "should and a and {{name}}" do
       cpu.register.a = 0x1_u8
       cpu.register.{{name}} = 0x1_u8
