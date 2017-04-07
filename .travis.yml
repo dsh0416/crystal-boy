@@ -5,3 +5,6 @@ crystal:
 script:
   - make spec
   - make
+matrix:
+  allow_failures:
+    - crystal: nightly
