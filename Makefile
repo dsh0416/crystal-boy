@@ -1,14 +1,14 @@
-all: build/crystal-boy-release
+all: build
 
 O := build
 SOURCES := $(shell find lib -name '*.cr')
 SPEC_SOURCES := $(shell find spec -name '*.cr')
 SHELL = bash
 
-build/crystal-boy-release: $(SOURCES)
+$(O)/crystal-boy-release: $(SOURCES)
 	crystal build -o $(O)/crystal-boy-release lib/crystal-boy.cr --release
 
-build/crystal-boy-debug: $(SOURCES)
+$(O)/crystal-boy-debug: $(SOURCES)
 	crystal build -o $(O)/crystal-boy-debug lib/crystal-boy.cr --debug
 
 build: $(O)/crystal-boy-release
