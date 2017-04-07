@@ -19,7 +19,7 @@ spec:
 clean:
 	rm -f $(O)/crystal-boy-debug $(O)/crystal-boy-release
 
-run: build/crystal-boy-debug
+run: $(O)/crystal-boy-debug
 	$(O)/crystal-boy-debug
 
 .PHONY: build run spec clean
